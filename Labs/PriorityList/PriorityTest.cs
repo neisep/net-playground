@@ -1,7 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
 using PriorityList.Domain;
 using PriorityList.Extensions;
-using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
 
 namespace PriorityList
 {
@@ -15,8 +18,8 @@ namespace PriorityList
         {
             _list = new List<Supplier>();
 
-            var supplier1 = CreateSupplier(1, "1001", "1001");
-            var supplier2 = CreateSupplier(2, "1001", "1002");
+            var supplier1 = CreateSupplier("1", "1001", "1001");
+            var supplier2 = CreateSupplier("2", "1001", "1002");
 
             _list.Add(supplier1);
             _list.Add(supplier2);
@@ -35,7 +38,7 @@ namespace PriorityList
         {
             var supplier = _list.GetSupplier("1000", "1001", "1002");
 
-            Assert.AreEqual("1002", supplier.Account2);
+            Assert.AreEqual("1002", supplier.AccountNumber2);
         }
 
         [TestMethod]
@@ -43,17 +46,38 @@ namespace PriorityList
         {
             var supplier = _list.GetSupplier("1000", "1001", "1001");
 
-            Assert.AreEqual("1001", supplier.Account2);
+            Assert.AreEqual("1001", supplier.AccountNumber2);
         }
 
-        private Supplier CreateSupplier(int globalIdentification, string account1, string account2)
+        /// <summary>
+        /// Just a small test too try out another kind of sorting.
+        /// </summary>
+        [TestMethod]
+        public void TestPriority_Sorting()
+        {
+            _list.Clear();
+            var supplier1 = CreateSupplier("1", "1001", "1001");
+            //var supplier2 = CreateSupplier("1", "1001", "1002");
+            //var supplier3 = CreateSupplier("1", "1002", "1002");
+
+            _list.Add(supplier1);
+            //_list.Add(supplier2);
+            //_list.Add(supplier3);
+
+            var supplier = _list.GetSupplier( "1002", "1002", "1002", false).First();
+
+            Assert.AreEqual(supplier1.ContactNumber, supplier.ContactNumber);
+
+        }
+
+        private Supplier CreateSupplier(string orgnumber, string account1, string account2)
         {
             return new Supplier
             {
-                Number = "1000",
-                GlobalIdentification = globalIdentification,
-                Account1 = account1,
-                Account2 = account2
+                ContactNumber = Guid.NewGuid(),
+                OrganizationNumber = orgnumber,
+                AccountNumber = account1,
+                AccountNumber2 = account2
             };
         }
     }
