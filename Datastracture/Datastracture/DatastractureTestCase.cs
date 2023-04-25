@@ -11,12 +11,22 @@ namespace Datastracture
     public class DatastractureTestCase
     {
         [TestMethod]
-        public void TestMethod1()
+        public void QuickSort()
         {
-            var dummy = new Sorting();
+            var sorting = new Sorting();
             var unsortedArray = new int[] { 1, 4, 6, 7, 1, 6, 4, 9, 2, 5 }
             ;
-            var dummy2 = dummy.QuickSort(unsortedArray, 0, unsortedArray.Length-1);
+            var sortedArray = sorting.QuickSort(unsortedArray, 0, unsortedArray.Length-1);
+
+            Assert.AreEqual(1, sortedArray[0]);
+            Assert.AreEqual(1, sortedArray[1]);
+            Assert.AreEqual(2, sortedArray[2]);
+            Assert.AreEqual(4, sortedArray[3]);
+            Assert.AreEqual(5, sortedArray[5]);
+            Assert.AreEqual(6, sortedArray[6]);
+            Assert.AreEqual(6, sortedArray[7]);
+            Assert.AreEqual(7, sortedArray[8]);
+            Assert.AreEqual(9, sortedArray[9]);
         }
     }
 }

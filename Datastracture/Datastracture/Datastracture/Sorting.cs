@@ -4,9 +4,6 @@ namespace Datastracture.Datastracture
 {
     public class Sorting
     {
-        //private int[] _unsortedArray = new int[] { 1, 4, 6, 7, 1, 6, 4, 9, 2, 5 };
-
-        //private int[] _sortedArray = new int[10];
         private Random _random = new Random();
 
         public int[] QuickSort(int[] unsortedArray, int left, int right)
