@@ -81,5 +81,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datastracture\Datastracture.csproj">
+      <Project>{62F5A662-492A-4B10-B42E-C47C0BD7DEF8}</Project>
+      <Name>Datastracture</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,6 +9,7 @@ using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Datastracture.Datastracture;
 
 namespace TestWindowsApp
 {
@@ -34,6 +35,21 @@ namespace TestWindowsApp
             var attribute = (TargetFrameworkAttribute[])assembly.GetCustomAttributes(typeof(TargetFrameworkAttribute));
 
             return attribute.Length > 0 ? attribute[0].FrameworkDisplayName : string.Empty;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //TODO DO SOMETHING GREAT!
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var binaryTree = new BinarySearchThree();
+            binaryTree.CreateThree();
+
+            textBox1.Text = $"{binaryTree.GetLeftNode()} {Environment.NewLine}{binaryTree.GetRightNode()}";
+
+            label6.Text = binaryTree.GetTopValue().ToString();
         }
     }
 }
