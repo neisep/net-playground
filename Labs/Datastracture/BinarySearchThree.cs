@@ -19,7 +19,7 @@ namespace Datastracture.Datastracture
         public void CreateThree()
         {
             var random = new Random();
-            _parentValue = random.Next(10, 100);
+            _parentValue = random.Next(11, 100);
 
             for (int i = 0; i < 4; i++)
             {
