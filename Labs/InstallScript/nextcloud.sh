@@ -14,25 +14,39 @@
 
 echo "Set sub domain to use"
 read sub_domain
-echo "Set password for user: nextcloud on mariadb-server"
-read my_password
+#echo "Set password for user: nextcloud on mariadb-server"
+#read my_password
 
 
-CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY $my_password;
-CREATE DATABASE IF NOT EXISTS nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-GRANT ALL PRIVILEGES ON nextcloud.* TO 'nextcloud'@'localhost';
-FLUSH PRIVILEGES;
+#CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY $my_password;
+#CREATE DATABASE IF NOT EXISTS nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+#GRANT ALL PRIVILEGES ON nextcloud.* TO 'nextcloud'@'localhost';
+#FLUSH PRIVILEGES;
 
-quit;
+#quit;
 
-wget https://download.nextcloud.com/server/releases/latest.zip
-unzip latest.zip
+#wget https://download.nextcloud.com/server/releases/latest.zip
+#unzip latest.zip
 
-sudo cp -r nextcloud /var/www
-sudo chown -R www-data:www-data /var/www/nextcloud
+#sudo cp -r nextcloud /var/www
+#sudo chown -R www-data:www-data /var/www/nextcloud
 
-wget https://raw.githubusercontent.com/neisep/Labs/master/Labs/InstallScript/nextcloud.conf
+#wget https://raw.githubusercontent.com/neisep/Labs/master/Labs/InstallScript/nextcloud.conf
+#sudo cp -r nextcloud.conf /etc/apache2/sites-available/nextcloud.conf
 
-sudo cp -r nextcloud.conf /etc/apache2/sites-available/nextcloud.conf
+#a2ensite nextcloud.conf
 
-a2ensite nextcloud.conf
+#required modules
+#a2enmod rewrite
+
+#recommended modules
+#a2enmod headers
+#a2enmod env
+#a2enmod dir
+#a2enmod mime
+
+#sudo service apache2 restart
+
+
+sed_param=s/Var1=.*/Var1=${sub_domain}/  
+sed -i "$sed_param" file.txt
