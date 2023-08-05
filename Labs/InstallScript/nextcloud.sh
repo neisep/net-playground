@@ -33,15 +33,15 @@ wget https://raw.githubusercontent.com/neisep/Labs/master/Labs/InstallScript/nex
 sed -i ''s/ServerName .*/ServerName ${sub_domain}/'' nextcloud.conf
 sudo cp -r nextcloud.conf /etc/apache2/sites-available/nextcloud.conf
 
-a2ensite nextcloud.conf
+sudo a2ensite nextcloud.conf
 
 #required modules
-a2enmod rewrite
+sudo a2enmod rewrite
 
 #recommended modules
-a2enmod headers
-a2enmod env
-a2enmod dir
-a2enmod mime
+sudo a2enmod headers
+sudo a2enmod env
+sudo a2enmod dir
+sudo a2enmod mime
 
 sudo service apache2 restart
