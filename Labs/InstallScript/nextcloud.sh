@@ -17,7 +17,7 @@ read sub_domain
 echo "Set password for user: nextcloud on mariadb-server"
 read my_password
 
-sudo mysql -e ""CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY ${my_password};""
+sudo mysql -e "CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY '"$my_password"';"
 sudo mysql -e "CREATE DATABASE IF NOT EXISTS nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;"
 sudo mysql -e "GRANT ALL PRIVILEGES ON nextcloud.* TO 'nextcloud'@'localhost';"
 sudo mysql -e "FLUSH PRIVILEGES;"
@@ -30,7 +30,7 @@ sudo chown -R www-data:www-data /var/www/nextcloud
 
 wget https://raw.githubusercontent.com/neisep/Labs/master/Labs/InstallScript/nextcloud.conf
 
-sed -i ''s/ServerName .*/ServerName ${sub_domain}/'' nextcloud.conf
+sed -i 's/ServerName .*/ServerName '"$sub_domain"'/' nextcloud.conf
 sudo cp -r nextcloud.conf /etc/apache2/sites-available/nextcloud.conf
 
 sudo a2ensite nextcloud.conf
