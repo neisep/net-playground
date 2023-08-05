@@ -6,6 +6,8 @@
     Require all granted
     AllowOverride All
     Options FollowSymLinks MultiViews
+	
+	Satisfy Any
 
     <IfModule mod_dav.c>
       Dav off
