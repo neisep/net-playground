@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWindowsApp", "TestWindowsApp\TestWindowsApp.csproj", "{F2238074-F82C-4EAB-BD2D-F0FB3AFF7718}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatastractureTests", "DatastractureTests\DatastractureTests.csproj", "{1DAC0E3F-B973-46AB-9817-9F3CF0B5F989}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatastractureTests", "PriorityList\DatastractureTests.csproj", "{1DAC0E3F-B973-46AB-9817-9F3CF0B5F989}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datastracture", "Datastracture\Datastracture.csproj", "{62F5A662-492A-4B10-B42E-C47C0BD7DEF8}"
 EndProject

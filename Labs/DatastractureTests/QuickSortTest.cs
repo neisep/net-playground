@@ -1,7 +1,7 @@
-﻿using Datastracture.Datastracture;
+﻿using Datastracture.Algo;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Datastracture
+namespace PriorityList
 {
     [TestClass]
     public class DatastractureTestCase
@@ -9,10 +9,10 @@ namespace Datastracture
         [TestMethod]
         public void QuickSort()
         {
-            var sorting = new Sorting();
+            var sorting = new QuickSort();
             var unsortedArray = new int[] { 1, 4, 6, 7, 1, 6, 4, 9, 2, 5 }
             ;
-            var sortedArray = sorting.QuickSort(unsortedArray, 0, unsortedArray.Length-1);
+            var sortedArray = sorting.Sort(unsortedArray, 0, unsortedArray.Length - 1);
 
             Assert.AreEqual(1, sortedArray[0]);
             Assert.AreEqual(1, sortedArray[1]);
