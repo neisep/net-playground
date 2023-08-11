@@ -49,6 +49,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinarySearchTreeTest.cs" />
     <Compile Include="Domain\Suppliers.cs" />
     <Compile Include="Extensions\PriorityListExtention.cs" />
     <Compile Include="PriorityTest.cs" />

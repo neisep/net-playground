@@ -5,9 +5,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("PriorityList")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Hogia AB")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("PriorityList")]
-[assembly: AssemblyCopyright("Copyright © Hogia AB 2023")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

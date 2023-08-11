@@ -11,7 +11,7 @@ namespace DatastractureTests
         {
             var binarySearchTree = new BinarySearchThree();
 
-            binarySearchTree.CreateThree();
+
 
         }
     }

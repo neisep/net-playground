@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("TestWindowsApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Hogia AB")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("TestWindowsApp")]
-[assembly: AssemblyCopyright("Copyright © Hogia AB 2023")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
