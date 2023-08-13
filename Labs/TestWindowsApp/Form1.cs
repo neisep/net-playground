@@ -44,12 +44,12 @@ namespace TestWindowsApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var binaryTree = new BinarySearchThree();
-            binaryTree.CreateThree();
+            //var binaryTree = new BinarySearchThree();
+            //binaryTree.CreateThree();
 
-            textBox1.Text = $"{binaryTree.GetLeftNode()} {Environment.NewLine}{binaryTree.GetRightNode()}";
+            //textBox1.Text = $"{binaryTree.GetLeftNode()} {Environment.NewLine}{binaryTree.GetRightNode()}";
 
-            label6.Text = binaryTree.GetTopValue().ToString();
+            //label6.Text = binaryTree.GetTopValue().ToString();
         }
     }
 }
