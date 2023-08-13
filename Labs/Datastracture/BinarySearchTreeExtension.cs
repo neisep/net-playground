@@ -28,5 +28,17 @@ namespace Datastracture
                     CreateNode(parentNode.Left, node);
             }
         }
+
+        public static void Search(this Leaf currentNode, int value)
+        {
+            if (currentNode.Key < value)
+            {
+                currentNode.Right.Search(value);
+            }
+            else if (currentNode.Key > value)
+            {
+                currentNode.Left.Search(value);
+            }
+        }
     }
 }
