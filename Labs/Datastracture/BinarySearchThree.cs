@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 
 namespace Datastracture.Datastracture
 {
@@ -33,6 +29,48 @@ namespace Datastracture.Datastracture
         public Leaf GetThree()
         {
             return Leaf;
+        }
+
+        //well this code is incorrect i might calculate left side and right side but not left to right and make sure its on the same height.... its just weird...
+        //balancing should be when both left side and right side doesn't different more then 1 if it does differ then it means its not balanced but i might be completly wrong.
+        //Anyway i have change this code tomorow or some other day.
+        public void TryToBalance(Leaf topNode)
+        {
+            //First calculate each nodes in different direction!
+            var currentNode = topNode.Left;
+            var totalLeftNodes = GetTotalNodes(currentNode, NodeDirection.left);
+
+            currentNode = topNode.Right;
+            var totalRightNodes = GetTotalNodes(currentNode, NodeDirection.right);
+
+            if (totalLeftNodes != totalRightNodes)
+                Debug.WriteLine($"Probobly an unbalanced tree left: {totalLeftNodes} right: {totalRightNodes}");
+
+            if (totalLeftNodes < totalRightNodes)
+                Debug.WriteLine("Right node is greater then Left node");
+
+            if (totalLeftNodes > totalRightNodes)
+                Debug.WriteLine("Right node is less then Left node");
+        }
+
+        private int GetTotalNodes(Leaf currentNode, NodeDirection nodeDirection)
+        {
+            var deep = 0;
+            while (currentNode != null)
+            {
+                deep++;
+                if(nodeDirection == NodeDirection.left)
+                    currentNode = currentNode.Left;
+                if (nodeDirection == NodeDirection.right)
+                    currentNode = currentNode.Right;
+            }
+            return deep;
+        }
+
+        private enum NodeDirection
+        {
+            left,
+            right
         }
     }
 }
