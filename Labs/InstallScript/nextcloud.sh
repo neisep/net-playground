@@ -7,6 +7,8 @@
 #You could modify this script to whatever you like too
 #I just made this to make it easier for me to install nextcloud next time i need too set it up.
 ##########################################################################################################
+wget https://raw.githubusercontent.com/neisep/Labs/master/Labs/InstallScript/collabora.sh
+wget https://raw.githubusercontent.com/neisep/Labs/master/Labs/InstallScript/cfg/nextcloud.conf
 
 sudo apt update && sudo apt upgrade
 sudo apt install apache2 mariadb-server libapache2-mod-php php-gd php-mysql \
@@ -30,8 +32,6 @@ unzip latest.zip
 sudo cp -r nextcloud /var/www
 sudo chown -R www-data:www-data /var/www/nextcloud
 
-wget https://raw.githubusercontent.com/neisep/Labs/master/Labs/InstallScript/nextcloud.conf
-
 sed -i 's/ServerName .*/ServerName '"$sub_domain"'/' nextcloud.conf
 sudo cp -r nextcloud.conf /etc/apache2/sites-available/nextcloud.conf
 
@@ -48,12 +48,4 @@ sudo a2enmod mime
 
 sudo service apache2 restart
 
-#Install Collabora Online
-
-cd /usr/share/keyrings
-sudo wget https://collaboraoffice.com/downloads/gpg/collaboraonline-release-keyring.gpg
-
-wget https://raw.githubusercontent.com/neisep/Labs/master/Labs/InstallScript/collaboraonline.sources
-sudo cp -r collaboraonline.sources /etc/apt/sources.list.d/collaboraonline.sources
-
-sudo apt update && sudo apt install coolwsd code-brand
+source collabora.sh
