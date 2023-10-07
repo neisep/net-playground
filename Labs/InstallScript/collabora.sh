@@ -13,8 +13,9 @@
 cd /usr/share/keyrings
 sudo wget https://collaboraoffice.com/downloads/gpg/collaboraonline-release-keyring.gpg
 
-wget https://raw.githubusercontent.com/neisep/Labs/master/Labs/InstallScript/cfg/collaboraonline.conf
-sudo cp -r collaboraonline.conf /etc/apt/sources.list.d/collaboraonline.sourcescd
+sudo wget https://raw.githubusercontent.com/neisep/Labs/master/Labs/InstallScript/cfg/collaboraonline.conf
+
+sudo cp -r collaboraonline.conf /etc/apt/sources.list.d/collaboraonline.sources
 
 sudo apt update && sudo apt install coolwsd code-brand
 
