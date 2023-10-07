@@ -2,7 +2,7 @@
 
 #NOTE
 ##########################################################################################################
-#This script will install nextcloud
+#This script will install nextcloud on Ubuntu or any deb based distributions
 #it will install mariadb-server apache2 and php, there for this script is better on a clean installation
 #You could modify this script to whatever you like too
 #I just made this to make it easier for me to install nextcloud next time i need too set it up.
@@ -47,3 +47,13 @@ sudo a2enmod dir
 sudo a2enmod mime
 
 sudo service apache2 restart
+
+#Install Collabora Online
+
+cd /usr/share/keyrings
+sudo wget https://collaboraoffice.com/downloads/gpg/collaboraonline-release-keyring.gpg
+
+wget https://raw.githubusercontent.com/neisep/Labs/master/Labs/InstallScript/collaboraonline.sources
+sudo cp -r collaboraonline.sources /etc/apt/sources.list.d/collaboraonline.sources
+
+sudo apt update && sudo apt install coolwsd code-brand
