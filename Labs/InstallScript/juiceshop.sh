@@ -29,4 +29,6 @@ cd juice-shop
 #lets install/compile or whatever you do with frontend mumba jumba
 npm install
 
-echo "If everything worked out fine you should only need to run npm run in the source directory, hopefully your already in it else its in juice-shop in your home directory"
+echo "If everything worked out fine you should only need to run npm start in the source directory, hopefully your already in it else its in juice-shop in your home directory"
+
+#npm start
