@@ -72,6 +72,13 @@ namespace DefensiveProgrammingTests
 
             Assert.IsTrue(dummy.IsValid());
         }
+
+        [TestMethod]
+        public void ExampleOfStringJoin()
+        {
+            var exampleData = new[] { "FirstName", "Cellphone", "Adress" };
+            var joinString = string.Join(",", exampleData);
+        }
     }
 
     #region WorseExample
