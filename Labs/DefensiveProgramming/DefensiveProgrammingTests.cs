@@ -1,5 +1,6 @@
 ﻿//ONLY FOR TRAINING PURPOSE DO NOT FOLLOW OR USE IN ANY KIND
 //LOL LIKE ANYONE WOULD EVER READ THIS LMAO
+//Anyway this is still in learning, so some test might be green some might be red im just testing things out.
 
 //Guarding code should be avoided i guess.
 //defense by design steer the operation so that it never gets stuck
@@ -83,30 +84,32 @@ namespace DefensiveProgrammingTests
         }
 
         [TestMethod]
-        public void ExampleOfStringJoin()
+        public void DefensiveProgramming_EstateCustomer_SetPrivilege_OK()
         {
-            var exampleData = new[] { "FirstName", "Cellphone", "Adress" };
-            var joinString = string.Join(",", exampleData);
-        }
-        [TestMethod]
-        public void DefensiveProgramming_EstateCustomer_OK()
-        {
-            var dummy = new EstateCustomer("Jimmie");
+            var dummy = new EstateCustomer("Jimmie", Privilege.Moderator);
 
             Assert.IsFalse(dummy.Id == Guid.Empty);
             Assert.AreEqual("Jimmie", dummy.Name);
+            Assert.AreEqual(2, dummy.GetCurrentPrivilege().GetUserLevel());
         }
+
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void DefensiveProgramming_EstateCustomer_Fail()
         {
-            var dummy = new EstateCustomer("");
+            var dummy = new EstateCustomer("", Privilege.User);
         }
 
+        /// <summary>
+        /// Simple test how to use StringJoin could be useful but has nothing todo with defensive programming, sorry i was testing something and it ended up here.
+        /// </summary>
         [TestMethod]
-        public void DefensiveProgramming_EstateCustomer_NotSureWhatThisTestDo()
+        public void ExampleOfStringJoin()
         {
+            var exampleData = new[] { "FirstName", "Cellphone", "Adress" };
+            var joinString = string.Join(",", exampleData);
 
+            Assert.AreEqual("FirstName,Cellphone,Adress", joinString);
         }
     }
 
@@ -130,7 +133,7 @@ namespace DefensiveProgrammingTests
     #endregion
 
 
-    #region BetterExample
+    #region BetterExampleNOTMUCHBETTERACTUALLY!
 
     public class RenewLicense
     {
