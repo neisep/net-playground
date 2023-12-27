@@ -4,8 +4,11 @@
 //Guarding code should be avoided i guess.
 //defense by design steer the operation so that it never gets stuck
 //this is only for testing for my own there is no assert because i only test run the code no assert is needed in my case, for this purpose atleast not right now.
+//No property setter, no need to defense
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using DefensiveProgrammingTests.Domain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DefensiveProgrammingTests
@@ -27,6 +30,12 @@ namespace DefensiveProgrammingTests
         {
             var bad = new LicenseBadExample();
             bad.RenewLicense(DateTime.Now);
+
+            List<string> test = new List<string>
+            {
+                "",
+                "",
+            };
         }
 
         /// <summary>
@@ -79,6 +88,26 @@ namespace DefensiveProgrammingTests
             var exampleData = new[] { "FirstName", "Cellphone", "Adress" };
             var joinString = string.Join(",", exampleData);
         }
+        [TestMethod]
+        public void DefensiveProgramming_EstateCustomer_OK()
+        {
+            var dummy = new EstateCustomer("Jimmie");
+
+            Assert.IsFalse(dummy.Id == Guid.Empty);
+            Assert.AreEqual("Jimmie", dummy.Name);
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void DefensiveProgramming_EstateCustomer_Fail()
+        {
+            var dummy = new EstateCustomer("");
+        }
+
+        [TestMethod]
+        public void DefensiveProgramming_EstateCustomer_NotSureWhatThisTestDo()
+        {
+
+        }
     }
 
     #region WorseExample
@@ -127,46 +156,4 @@ namespace DefensiveProgrammingTests
     }
 
     #endregion
-
-    public class Customer
-    {
-        public string Name { get; }
-
-        public Customer(string name)
-        {
-            if (string.IsNullOrEmpty(name))
-                throw new ArgumentException();
-
-            this.Name = name;
-        }
-    }
-
-    public class EstateCustomer : Customer
-    {
-        public EstateCustomer(string name) : base(name)
-        {
-        }
-    }
-
-    /// <summary>
-    /// This class makes sure the data is valid, should make it easier too understand how complex code can be much more readable and understandable i think.
-    /// So probably a good way too actually create and use objects in a complex code or it doesn't have to be just a complex code it could be applied on anykind of code to make it better.
-    /// </summary>
-    public class CustomerBuilder
-    {
-        public string Name { get; set; }
-        public string StreetAdress { get; set; }
-        public string NameInitial => this.Name.Substring(0, char.IsHighSurrogate(this.Name[0]) ? 2 : 1); //This actually require some kind of defense, what if name is empty or there is no High
-
-        public bool IsValid()
-        {
-            if (string.IsNullOrEmpty(Name))
-                return false;
-
-            if (string.IsNullOrEmpty(StreetAdress))
-                return false;
-
-            return true;
-        }
-    }
 }
