@@ -99,18 +99,6 @@ namespace DefensiveProgrammingTests
         {
             var dummy = new EstateCustomer("", Privilege.User);
         }
-
-        /// <summary>
-        /// Simple test how to use StringJoin could be useful but has nothing todo with defensive programming, sorry i was testing something and it ended up here.
-        /// </summary>
-        [TestMethod]
-        public void ExampleOfStringJoin()
-        {
-            var exampleData = new[] { "FirstName", "Cellphone", "Adress" };
-            var joinString = string.Join(",", exampleData);
-
-            Assert.AreEqual("FirstName,Cellphone,Adress", joinString);
-        }
     }
 
     #region WorseExample

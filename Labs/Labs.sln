@@ -11,7 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datastracture", "Datastract
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefensiveProgrammingTests", "DefensiveProgramming\DefensiveProgrammingTests.csproj", "{D36EABB4-918F-44C9-9764-88F930FFDF88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetupStar", "SetupStar\SetupStar.csproj", "{33FD48BE-2419-4122-9564-A9973C7ADD42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SetupStar", "SetupStar\SetupStar.csproj", "{33FD48BE-2419-4122-9564-A9973C7ADD42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiscTests", "MiscTests\MiscTests.csproj", "{5232EBE4-8608-4C0A-9F58-91A111852146}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{33FD48BE-2419-4122-9564-A9973C7ADD42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33FD48BE-2419-4122-9564-A9973C7ADD42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33FD48BE-2419-4122-9564-A9973C7ADD42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5232EBE4-8608-4C0A-9F58-91A111852146}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5232EBE4-8608-4C0A-9F58-91A111852146}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5232EBE4-8608-4C0A-9F58-91A111852146}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5232EBE4-8608-4C0A-9F58-91A111852146}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
