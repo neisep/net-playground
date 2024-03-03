@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SetupStar", "SetupStar\Setu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiscTests", "MiscTests\MiscTests.csproj", "{5232EBE4-8608-4C0A-9F58-91A111852146}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pdf2Tiff", "Pdf2Tiff\Pdf2Tiff.csproj", "{0526BD17-AC33-4787-BCC1-DB4F8EB6A9CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{5232EBE4-8608-4C0A-9F58-91A111852146}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5232EBE4-8608-4C0A-9F58-91A111852146}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5232EBE4-8608-4C0A-9F58-91A111852146}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0526BD17-AC33-4787-BCC1-DB4F8EB6A9CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0526BD17-AC33-4787-BCC1-DB4F8EB6A9CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0526BD17-AC33-4787-BCC1-DB4F8EB6A9CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0526BD17-AC33-4787-BCC1-DB4F8EB6A9CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
