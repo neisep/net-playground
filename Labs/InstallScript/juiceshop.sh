@@ -27,7 +27,7 @@ git clone https://github.com/juice-shop/juice-shop.git --depth 1
 cd juice-shop
 
 #lets install/compile or whatever you do with frontend mumba jumba
-npm install
+npm ci
 
 echo "If everything worked out fine you should only need to run npm start in the source directory, hopefully your already in it else its in juice-shop in your home directory"
 
