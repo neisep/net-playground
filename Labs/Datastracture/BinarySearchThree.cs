@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
+using System.Xml.Linq;
 
 namespace Datastracture.Datastracture
 {
@@ -12,8 +14,10 @@ namespace Datastracture.Datastracture
         public int Key { get; set; }
         public Leaf Left { get; set; }
         public Leaf Right { get; set; }
+        public int Height { get; set; }
     }
 
+    //AVL Tree
     public class BinarySearchThree
     {
         public Leaf Leaf { get; set; }
@@ -31,26 +35,86 @@ namespace Datastracture.Datastracture
             return Leaf;
         }
 
-        //well this code is incorrect i might calculate left side and right side but not left to right and make sure its on the same height.... its just weird...
-        //balancing should be when both left side and right side doesn't different more then 1 if it does differ then it means its not balanced but i might be completly wrong.
-        //Anyway i have change this code tomorow or some other day.
-        public void TryToBalance(Leaf topNode)
+        //This is balancing AVL Tree and im tring to balance the tree.
+        public void TryToBalance(Leaf node)
         {
-            //First calculate each nodes in different direction!
-            var currentNode = topNode.Left;
-            var totalLeftNodes = GetTotalNodes(currentNode, NodeDirection.left);
+            //First get the balance factor
+            int balanceFactor = GetBalanceFactor(node);
 
-            currentNode = topNode.Right;
-            var totalRightNodes = GetTotalNodes(currentNode, NodeDirection.right);
+            if (balanceFactor > 1)
+            {
+                //Left side is heavy
+                if (GetBalanceFactor(node.Left) > 0)
+                {
+                    //Left side is heavy
+                    RotateLeft(node);
+                }
+                else
+                {
+                    //Right side is heavy
+                    RotateRightLeft(node);
+                }
+            }
+            else if (balanceFactor < -1)
+            {
+                //Right side is heavy
+                if (GetBalanceFactor(node.Right) < 0)
+                {
+                    //Right side is heavy
+                    RotateRight(node);
+                }
+                else
+                {
+                    //Left side is heavy
+                    RotateLeftRight(node);
+                }
+            }
+        }
 
-            if (totalLeftNodes != totalRightNodes)
-                Debug.WriteLine($"Probobly an unbalanced tree left: {totalLeftNodes} right: {totalRightNodes}");
+        public void RotateLeft(Leaf node)
+        {
+            var rightNode = node.Right;
+            node.Right = rightNode.Left;
+            rightNode.Left = node;
+        }
 
-            if (totalLeftNodes < totalRightNodes)
-                Debug.WriteLine("Right node is greater then Left node");
+        public void RotateRightLeft(Leaf node)
+        {
+            RotateRight(node.Right);
+            RotateLeft(node);
+        }
 
-            if (totalLeftNodes > totalRightNodes)
-                Debug.WriteLine("Right node is less then Left node");
+        public void RotateRight(Leaf node)
+        {
+            var leftNode = node.Left;
+            node.Left = leftNode.Right;
+            leftNode.Right = node;
+        }
+
+        public void RotateLeftRight(Leaf node)
+        {
+            RotateLeft(node.Left);
+            RotateRight(node);
+        }
+
+        //private int GetBalanceFactor(Leaf node)
+        //{
+        //    int leftHeight = node.Left != null ? node.Left.Height : 0;
+        //    int rightHeight = node.Right != null ? node.Right.Height : 0;
+
+        //    return leftHeight - rightHeight;
+        //}
+
+        public int GetBalanceFactor(Leaf tree)
+        {
+            // Calculate the balance factor of the tree
+            return GetHeight(tree.Left) - GetHeight(tree.Right);
+        }
+
+        private int GetHeight(Leaf tree)
+        {
+            // Calculate the height of the tree
+            return tree != null ? tree.Height : 0;
         }
 
         private int GetTotalNodes(Leaf currentNode, NodeDirection nodeDirection)
@@ -65,6 +129,12 @@ namespace Datastracture.Datastracture
                     currentNode = currentNode.Right;
             }
             return deep;
+        }
+
+        public bool IsBalanced(Leaf tree)
+        {
+            // Check if the tree is balanced by checking the balance factor
+            return Math.Abs(GetBalanceFactor(tree)) <= 1;
         }
 
         private enum NodeDirection

@@ -52,6 +52,7 @@
     <Compile Include="codeToTest\ValueInBetween.cs" />
     <Compile Include="MiscTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controllers\Customers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

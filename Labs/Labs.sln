@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiscTests", "MiscTests\Misc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pdf2Tiff", "Pdf2Tiff\Pdf2Tiff.csproj", "{0526BD17-AC33-4787-BCC1-DB4F8EB6A9CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfiumFunction", "PdfiumFunction\PdfiumFunction.csproj", "{17997A21-975C-402F-92B7-D169DC65FFCC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{0526BD17-AC33-4787-BCC1-DB4F8EB6A9CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0526BD17-AC33-4787-BCC1-DB4F8EB6A9CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0526BD17-AC33-4787-BCC1-DB4F8EB6A9CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17997A21-975C-402F-92B7-D169DC65FFCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17997A21-975C-402F-92B7-D169DC65FFCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17997A21-975C-402F-92B7-D169DC65FFCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17997A21-975C-402F-92B7-D169DC65FFCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

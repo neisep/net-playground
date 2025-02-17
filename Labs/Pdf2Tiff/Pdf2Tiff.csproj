@@ -10,6 +10,13 @@
   <ItemGroup>
     <PackageReference Include="PDFiumCore" Version="123.0.6309" />
     <PackageReference Include="System.Drawing.Common" Version="8.0.2" />
+    <PackageReference Include="Wasmtime" Version="19.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="pdfium.wasm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
